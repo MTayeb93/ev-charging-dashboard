@@ -1,14 +1,21 @@
+// Charts – Charging Values
 import { ChargingLineChart } from '../charts/charging-values-per-charging-point/ChargingLineChart';
-
-import Card from '../common/Card';
 import { HeatmapChargepointUsage } from '../charts/charging-values-per-charging-point/HeatmapChargepointUsage';
+
+// Charts – Exemplary Day
 import { AggregatedBarChart } from '../charts/exemplary-day/AggregatedBarChart';
 import { DailySummaryCards } from '../charts/exemplary-day/DailySummaryCard';
+
+// Charts – Stats & Demand
 import { ChargingEventsBarChart } from '../charts/ChargingEventsChart';
 import ChargingEventsStats from '../charts/ChargingEventsStats';
 import PowerDemandChart from '../charts/PowerDemandChart';
 
+// Components
+import Card from '../common/Card';
+
 const OutputCharts = () => {
+  // render output charts as per tasked
   return (
     <div className='grid gap-8 pb-20'>
       <h2 className='text-2xl font-bold text-blue-700 border-b pb-2'>

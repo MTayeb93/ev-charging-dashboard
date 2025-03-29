@@ -12,7 +12,7 @@ import Button from '../common/Button';
 // Icons
 import { Car, BatteryCharging, Zap, TrendingUp } from 'lucide-react';
 
-// Types
+// Types - Exporting form data type from yup to make sure that we are sending the exact same validated data to the backend
 export type FormValues = yup.InferType<typeof schema>;
 
 // Schema
@@ -34,6 +34,7 @@ interface InputFormProps {
   isLoading: boolean;
 }
 
+// Creating form data object
 const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => {
   const [formData, setFormData] = useState<FormValues>({
     numberOfChargePoints: 1,
@@ -46,6 +47,7 @@ const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => {
     Partial<Record<keyof FormValues, string>>
   >({});
 
+  // Filling out input data in the data form (preparing API payload with validated entries)
   const handleChange = (field: keyof FormValues, value: number | string) => {
     setFormData((prev) => ({
       ...prev,
@@ -57,6 +59,7 @@ const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => {
     }));
   };
 
+  // Handle Form Submission
   const handleSubmit = async () => {
     try {
       const validData = await schema.validate(formData, { abortEarly: false });
