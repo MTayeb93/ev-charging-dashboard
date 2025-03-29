@@ -10,6 +10,7 @@ interface SliderFieldProps {
   step?: number;
   icon?: ReactNode;
   unit?: string;
+  error?: string;
 }
 
 const getColor = (value: number) => {
@@ -31,10 +32,10 @@ const SliderField = ({
   step = 10,
   icon,
   unit = '%',
+  error,
 }: SliderFieldProps) => {
   const colorClass = getColor(value);
 
-  // 25%, 50%, 75% points
   const intermediatePoints = [0.25, 0.5, 0.75].map((fraction) => {
     const val = Math.round(min + (max - min) * fraction);
     const left = fraction * 100;
@@ -52,13 +53,11 @@ const SliderField = ({
         <div
           className={`text-sm font-semibold px-2 py-1 rounded transition-all duration-300 ${colorClass}`}
         >
-          {value}{' '}
-          {unit}
+          {value}{unit}
         </div>
       </div>
 
       <div className="relative w-full">
-        {/* Track background */}
         <div className="absolute top-1/2 transform -translate-y-1/2 h-3 w-full bg-gray-200 rounded" />
         <div
           className="absolute top-1/2 transform -translate-y-1/2 h-2 bg-[#FA9E0D] rounded"
@@ -81,7 +80,6 @@ const SliderField = ({
           }}
         />
 
-        {/* Label row with only min, mid-points, max */}
         <div className="relative flex justify-between text-xs text-gray-500 mt-1">
           <span>{min}{unit}</span>
 
@@ -98,6 +96,8 @@ const SliderField = ({
           <span>{max}{unit}</span>
         </div>
       </div>
+
+      {error && <p className="text-sm text-red-500 mt-1">{error}</p>}
     </div>
   );
 };
