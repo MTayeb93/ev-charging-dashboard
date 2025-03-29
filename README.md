@@ -13,8 +13,8 @@ To run the frontend project locally:
 If provided as a zip, extract the contents. If using Git:
 
 ```bash
-git clone <repository-url>
-cd <project-folder>
+git clone git@github.com:MTayeb93/ev-charging-dashboard.git
+cd ev-charging-dashboard
 ```
 
 ### 2. Install Dependencies & Run Project
