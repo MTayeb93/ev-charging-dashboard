@@ -1,11 +1,15 @@
+// React
 import { useState, useEffect, lazy, Suspense } from 'react';
-import { Loader } from 'lucide-react';
-import InputForm from './components/InputForm';
-import PageLayout from './components/Layout';
-import Card from './components/ui/Card';
-import { FormValues } from './types';
 
-const OutputModal = lazy(() => import('./components/OutputModal'));
+// Icons
+import { Loader } from 'lucide-react';
+
+// Components
+import PageLayout from './components/layout/Layout';
+import Card from './components/common/Card';
+import InputForm, { FormValues } from './components/form/InputForm';
+
+const OutputModal = lazy(() => import('./components/output/OutputModal'));
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -37,6 +41,7 @@ function App() {
   return (
     <PageLayout>
       <div className='items-center gap-8 px-4 sm:px-8 md:px-16 w-full lg:max-w-6/12 mx-auto'>
+        {/* Progress bar to simulate generating report simulation */}
         {isLoading && (
           <div className='flex flex-col items-center gap-3 w-full mt-4'>
             <div className='relative w-full h-3 bg-gray-200 rounded'>
@@ -51,12 +56,14 @@ function App() {
             </div>
           </div>
         )}
+        {/* Input Form */}
         {!isLoading && (
           <Card title='Simulation Parameters' className='self-start'>
-            <InputForm onSubmit={handleSubmit} />
+            <InputForm onSubmit={handleSubmit} isLoading={isLoading} />
           </Card>
         )}
         {/* Of course the modal is in lazy loading so it won't be rendered unless needed / opened */}
+        {/* Output Modal */}
         <Suspense fallback={null}>
           <OutputModal
             isOpen={isModalOpen}

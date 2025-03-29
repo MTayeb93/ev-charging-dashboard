@@ -9,7 +9,7 @@ import {
 import { MatrixController, MatrixElement } from "chartjs-chart-matrix";
 import { Chart } from "react-chartjs-2";
 import { FC, useMemo } from "react";
-import { generateHeatmapData, HeatmapDataPoint } from "../../../data/dummyData";
+import { generateHeatmapData, HeatmapDataPoint } from "../../../data";
 
 ChartJS.register(
  MatrixController,

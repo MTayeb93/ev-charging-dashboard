@@ -9,7 +9,7 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { FC, useMemo, useState } from "react";
-import { chargingEvents } from "../../../data/dummyData";
+import { chargingEvents } from "../../../data";
 import { aggregateChargingData, AggregationType } from "../../../utils/helpers";
 
 ChartJS.register(

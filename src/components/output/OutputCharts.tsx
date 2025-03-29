@@ -1,12 +1,12 @@
-import { ChargingLineChart } from './charts/charging-values-per-charging-point/ChargingLineChart';
+import { ChargingLineChart } from '../charts/charging-values-per-charging-point/ChargingLineChart';
 
-import Card from './ui/Card';
-import { HeatmapChargepointUsage } from './charts/charging-values-per-charging-point/HeatmapChargepointUsage';
-import { AggregatedBarChart } from './charts/exemplary-day/AggregatedBarChart';
-import { DailySummaryCards } from './charts/exemplary-day/DailySummaryCard';
-import { ChargingEventsBarChart } from './ChargingEventsChart';
-import ChargingEventsStats from './ChargingEventsStats';
-import PowerDemandChart from './PowerDemandChart';
+import Card from '../common/Card';
+import { HeatmapChargepointUsage } from '../charts/charging-values-per-charging-point/HeatmapChargepointUsage';
+import { AggregatedBarChart } from '../charts/exemplary-day/AggregatedBarChart';
+import { DailySummaryCards } from '../charts/exemplary-day/DailySummaryCard';
+import { ChargingEventsBarChart } from '../charts/ChargingEventsChart';
+import ChargingEventsStats from '../charts/ChargingEventsStats';
+import PowerDemandChart from '../charts/PowerDemandChart';
 
 const OutputCharts = () => {
   return (

@@ -10,7 +10,7 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { FC } from "react";
-import { chargingTimeSeriesData, TimeSeriesDataPoint } from "../../../data/dummyData";
+import { chargingTimeSeriesData, TimeSeriesDataPoint } from "../../../data";
 
 ChartJS.register(
   LineElement,

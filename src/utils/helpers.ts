@@ -1,4 +1,4 @@
- import { ChargeEvent } from "../data/dummyData";
+ import { ChargeEvent } from "../data";
 
 export type AggregationType = "15min" | "hourly";
 

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Zap, BarChart3, Gauge, BatteryCharging, ClipboardList } from "lucide-react";
-import DashboardCard from "../../ui/DashboardCard";
+import DashboardCard from "../../common/DashboardCard";
 
 // Dummy values
 const TOTAL_KWH = 624;

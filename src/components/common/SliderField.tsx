@@ -31,7 +31,7 @@ const SliderField = ({
   max = 200,
   step = 10,
   icon,
-  unit = '%',
+  unit,
   error,
 }: SliderFieldProps) => {
   const colorClass = getColor(value);

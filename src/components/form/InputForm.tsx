@@ -1,11 +1,21 @@
+// React
 import { useState } from 'react';
-import * as yup from 'yup';
-import InputField from './ui/InputField';
-import { Zap, Car, BatteryCharging, TrendingUp } from 'lucide-react';
-import SliderField from './ui/SliderField';
-import Button from './ui/Button';
-import { FormValues } from '../types/index';
 
+// Form Validation
+import * as yup from 'yup';
+
+// UI Components
+import InputField from '../common/InputField';
+import SliderField from '../common/SliderField';
+import Button from '../common/Button';
+
+// Icons
+import { Car, BatteryCharging, Zap, TrendingUp } from 'lucide-react';
+
+// Types
+export type FormValues = yup.InferType<typeof schema>;
+
+// Schema
 const schema = yup.object().shape({
   numberOfChargePoints: yup
     .number()
@@ -14,16 +24,17 @@ const schema = yup.object().shape({
     .min(1, 'Must be greater than 0')
     .max(10, 'Cannot exceed 10'),
 
-  probability: yup.number().min(20).max(200),
-  consumption: yup.number().min(10).max(40),
-  chargingPower: yup.number().min(3).max(22),
+  probability: yup.number().required().min(20).max(200),
+  consumption: yup.number().required().min(10).max(40),
+  chargingPower: yup.number().required().min(3).max(22),
 });
 
 interface InputFormProps {
   onSubmit: (data: FormValues) => void;
+  isLoading: boolean;
 }
 
-const InputForm: React.FC<InputFormProps> = ({ onSubmit }) => {
+const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => {
   const [formData, setFormData] = useState<FormValues>({
     numberOfChargePoints: 1,
     probability: 20,
@@ -49,7 +60,8 @@ const InputForm: React.FC<InputFormProps> = ({ onSubmit }) => {
   const handleSubmit = async () => {
     try {
       const validData = await schema.validate(formData, { abortEarly: false });
-      onSubmit(validData);
+      //api call lands here
+      onSubmit(validData as FormValues);
     } catch (validationError) {
       const errorMap: Partial<Record<keyof FormValues, string>> = {};
       if (validationError instanceof yup.ValidationError) {
@@ -116,7 +128,11 @@ const InputForm: React.FC<InputFormProps> = ({ onSubmit }) => {
         error={errors.chargingPower}
       />
 
-      <Button icon={<TrendingUp size={18} />} onClick={handleSubmit} />
+      <Button
+        icon={<TrendingUp size={18} />}
+        onClick={handleSubmit}
+        disabled={isLoading}
+      />
     </div>
   );
 };

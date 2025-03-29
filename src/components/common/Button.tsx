@@ -4,14 +4,16 @@ interface ButtonProps {
   onClick: (e: MouseEvent<HTMLButtonElement>) => void;
   icon?: ReactNode;
   type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean
 }
 
-const Button = ({ icon, onClick, type = 'button' }: ButtonProps) => {
+const Button = ({ icon, onClick, type = 'button', disabled }: ButtonProps) => {
   return (
     <button
       type={type}
       onClick={onClick}
       className="w-full cursor-pointer px-4 py-2 rounded-xl bg-[#FA9E0D] text-white hover:bg-orange-400 transition font-semibold text-md"
+      disabled={disabled}
     >
       <div className="flex items-center justify-center gap-2">
         {icon && <span className="flex items-center">{icon}</span>}

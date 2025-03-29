@@ -1,4 +1,4 @@
-import DashboardCard from './ui/DashboardCard';
+import DashboardCard from '../common/DashboardCard';
 import { Calendar, CalendarCheck2, CalendarDays } from 'lucide-react';
 
 // Dummy counts
