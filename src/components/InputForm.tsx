@@ -2,7 +2,7 @@ import { useState } from 'react';
 import * as yup from 'yup';
 import InputField from './ui/InputField';
 import { Zap, Car, BatteryCharging, TrendingUp } from 'lucide-react';
-import SliderField from './ui/ٍSliderField';
+import SliderField from './ui/SliderField';
 import Button from './ui/Button';
 import { FormValues } from '../types/index';
 
@@ -62,7 +62,7 @@ const InputForm: React.FC<InputFormProps> = ({ onSubmit }) => {
   };
 
   return (
-    <div className='space-y-6'>
+    <div className='space-y-10'>
       <InputField
         label='Number of charge points'
         name='numberOfChargePoints'

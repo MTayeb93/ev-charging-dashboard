@@ -9,7 +9,7 @@ const YEARLY_EVENTS = 21000;
 
 const ChargingEventsStats = () => {
   return (
-    <div className='grid grid-cols-4 gap-4 mb-8'>
+    <div className='grid md:grid-cols-4 gap-4 mb-8'>
       {/* Charging Events Summary */}
       <DashboardCard
         title='Charging Events Today'

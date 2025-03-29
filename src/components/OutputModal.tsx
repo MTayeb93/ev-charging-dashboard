@@ -21,7 +21,7 @@ const OutputModal: FC<OutputModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center">
+    <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center px-2 sm:px-6 md:px-10">
       <div
         className={`relative bg-white w-full max-w-6xl h-[90vh] rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 ease-out ${
           show ? "scale-100 opacity-100" : "scale-95 opacity-0"
@@ -56,7 +56,7 @@ const OutputModal: FC<OutputModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         {/* Content */}
-        <div className="overflow-y-auto h-full p-6 bg-white">
+        <div className="overflow-y-auto h-full p-2 sm:p-4 md:p-6 bg-white">
           <OutputCharts />
         </div>
       </div>

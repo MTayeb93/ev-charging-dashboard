@@ -36,7 +36,7 @@ function App() {
 
   return (
     <PageLayout>
-      <div className='flex flex-col items-center gap-8 px-4 sm:px-8 md:px-16 w-full max-w-xl mx-auto'>
+      <div className='items-center gap-8 px-4 sm:px-8 md:px-16 w-full lg:max-w-6/12 mx-auto'>
         {isLoading && (
           <div className='flex flex-col items-center gap-3 w-full mt-4'>
             <div className='relative w-full h-3 bg-gray-200 rounded'>
@@ -56,6 +56,7 @@ function App() {
             <InputForm onSubmit={handleSubmit} />
           </Card>
         )}
+        {/* Of course the modal is in lazy loading so it won't be rendered unless needed / opened */}
         <Suspense fallback={null}>
           <OutputModal
             isOpen={isModalOpen}

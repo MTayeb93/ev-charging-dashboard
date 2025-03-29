@@ -43,7 +43,7 @@ const OutputCharts = () => {
       <ChargingEventsBarChart />
 
       {/* Power Demand */}
-      <h2 className='text-2xl font-bold text-yellow-700 border-b pb-2 mt-8'>
+      <h2 className='text-2xl font-bold text-yellow-700 border-b pb-2 mt-4'>
         Power Demand
       </h2>
       <PowerDemandChart />
