@@ -81,6 +81,7 @@ export const ChargingEventsBarChart: FC = () => {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       title: {
         display: true,
@@ -129,7 +130,7 @@ export const ChargingEventsBarChart: FC = () => {
           <option value='year'>Yearly (5 years)</option>
         </select>
       </div>
-      <div className='w-full'>
+      <div className='relative h-[300px] sm:h-[400px]'>
         <Bar data={chartData} options={options} />
       </div>
     </div>
