@@ -77,7 +77,7 @@ const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => {
   };
 
   return (
-    <div className='space-y-10'>
+    <div className='flex flex-col gap-4'>
       <InputField
         label='Number of charge points'
         name='numberOfChargePoints'
