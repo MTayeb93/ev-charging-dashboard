@@ -36,7 +36,7 @@ interface InputFormProps {
 
 // Creating form data object
 const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => {
-  const [formData, setFormData] = useState<FormValues>({
+  const [formData, setFormData] = useState<Record<keyof FormValues, number | string>>({
     numberOfChargePoints: 1,
     probability: 20,
     consumption: 18,
@@ -51,7 +51,7 @@ const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => {
   const handleChange = (field: keyof FormValues, value: number | string) => {
     setFormData((prev) => ({
       ...prev,
-      [field]: typeof value === 'string' ? Number(value) : value,
+      [field]: value === '' ? '' : Number(value),
     }));
     setErrors((prev) => ({
       ...prev,

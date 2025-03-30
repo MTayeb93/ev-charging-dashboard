@@ -18,7 +18,7 @@ const OutputCharts = () => {
   // render output charts as per tasked
   return (
     <div className='grid gap-8 pb-20'>
-      <h2 className='text-2xl font-bold text-blue-700 border-b pb-2'>
+      <h2 className='text-2xl font-bold text-green-700 border-b pb-2'>
         Charging Values (kW) per Charge Point
       </h2>
       {/* Charge Points Values */}
@@ -32,7 +32,7 @@ const OutputCharts = () => {
       </div>
 
       {/* Exemplary day */}
-      <h2 className='text-2xl font-bold text-green-700 border-b pb-2 mt-8'>
+      <h2 className='text-2xl font-bold text-blue-700 border-b pb-2 mt-8'>
         An Exemplary Day
       </h2>
       <div className='grid gap-8'>
