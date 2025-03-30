@@ -1,13 +1,14 @@
 import { ReactNode, MouseEvent } from 'react';
 
 interface ButtonProps {
+  text: string;
   onClick: (e: MouseEvent<HTMLButtonElement>) => void;
   icon?: ReactNode;
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean
 }
 
-const Button = ({ icon, onClick, type = 'button', disabled }: ButtonProps) => {
+const Button = ({ text, icon, onClick, type = 'button', disabled }: ButtonProps) => {
   return (
     <button
       type={type}
@@ -17,7 +18,7 @@ const Button = ({ icon, onClick, type = 'button', disabled }: ButtonProps) => {
     >
       <div className="flex items-center justify-center gap-2">
         {icon && <span className="flex items-center">{icon}</span>}
-        <span>Submit Simulation Data</span>
+        <span>{text}</span>
       </div>
     </button>
   );

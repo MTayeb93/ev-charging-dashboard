@@ -36,8 +36,10 @@ interface InputFormProps {
 
 // Creating form data object
 const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => {
-  const [formData, setFormData] = useState<Record<keyof FormValues, number | string>>({
-    numberOfChargePoints: 1,
+  const [formData, setFormData] = useState<
+    Record<keyof FormValues, number | string>
+  >({
+    numberOfChargePoints: '',
     probability: 20,
     consumption: 18,
     chargingPower: 11,
@@ -77,7 +79,7 @@ const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => {
   };
 
   return (
-    <div className='flex flex-col gap-4'>
+    <div className='flex flex-col gap-6'>
       <InputField
         label='Number of charge points'
         name='numberOfChargePoints'
@@ -130,8 +132,8 @@ const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => {
         }
         error={errors.chargingPower}
       />
-
       <Button
+        text='Submit Simulation Data'
         icon={<TrendingUp size={18} />}
         onClick={handleSubmit}
         disabled={isLoading}

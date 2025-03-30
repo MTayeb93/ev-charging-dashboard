@@ -43,7 +43,7 @@ const SliderField = ({
   });
 
   return (
-    <div className="mb-8">
+    <div>
       <label htmlFor={name} className="block text-sm font-medium text-gray-700 mb-2">
         {label}
       </label>
